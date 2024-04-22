@@ -1,0 +1,120 @@
+/*nav sta3melneha filhtml bech na3lou beha nav barre*/
+
+*{
+    padding:0;
+    margin:0;
+    font-family: sans-serif; /*bech te5tar style mte3 lktiba*/
+}
+body{
+    background: linear-gradient(#111,#222);/*bch yab9a y3awed fezzina wyodmej zouz alwen*/
+    height: 100vh; /*3la toul esf7a*/
+    width:100%;
+    display:flex;
+    justify-content: center; /* nos 3la l'axe x*/
+    align-items: center;/* nos 3la l'axe y*/
+    /*ki t7eb t7ot 7aja felwest temchi lbouh lezem*/
+}
+
+body::after{
+    content:'';
+    width :100%;
+    height :100%;
+    background: red;
+    position:absolute;
+    z-index: -1; /*bch twali tben ta7t lmouraba3*/
+    clip-path:circle(40% at right 70%);
+     /*bch torsem ay 7aja wte5tar lposition felwest wkol*/
+
+}
+
+.container
+{
+    width :80%;
+    height:80%;
+    background: rgba(255,255,255,0.1);
+    border-radius:20px; /*bch ta3mel eta9wisa*/
+    overflow: hidden;
+}
+
+nav{
+    display:flex;
+    justify-content: space-between; /*bch tba3ed titre wlbarre*/
+    align-items: center;
+    width: 80%;
+    margin:auto;
+    padding: 20px 0;
+}
+nav .tit{
+    color: #ffff;
+    text-decoration: none;
+    font-size: 32px;
+    text-transform: uppercase; /*kolha majuscule*/
+    letter-spacing: 3px;
+    font-weight: 700;
+
+}
+
+nav ul li{
+    display: inline-block; /*bch trodhom en ligne*/
+    margin:0px 6px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500px;
+}
+nav ul li a:hover{
+    color: red;
+}
+
+.content{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 100%;
+    width:80%;
+    margin:auto;
+}
+.content .text{
+    color:white;
+    width:40%;
+}
+
+.content .text .h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.content .text .p{
+    font-size: 18px;
+    line-height: 25px;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.content .image{
+    width :40%;
+}
+
+.content .image img{
+    width: 330px;
+}
+
+@media (max-width:950px){
+
+    .content{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .content .image , .content .text{
+        width :80%;
+    }
+ 
+    body::after{
+        clip-path: circle(50% at bottom);
+    }
+}
